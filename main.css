@@ -26,10 +26,10 @@ a {
     "header header header header"
     "header header header header"
     "nav nav nav nav"
-    "article article article aside"
-    "article article article aside"
-    "article article article aside"
-    "article article article aside"
+    "article article article article"
+    "article article article article"
+    "aside aside aside aside"
+    "aside aside aside aside"
     "footer footer footer footer";
 }
 
@@ -46,7 +46,7 @@ header img {
 #menu1 {
   grid-area: nav;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: auto;
   grid-gap: 5px;
   padding: 5px;
 }
@@ -54,7 +54,7 @@ header img {
 #menu1 div {
   padding: 0;
   margin: 0;
-  background-color: gray;
+  background-color: #212121;
 }
 
 #menu1 div a {
@@ -102,21 +102,28 @@ aside p {
 footer {
   grid-area: footer;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto;
   grid-auto-rows: auto;
-  background-color: #212121;
 }
 
 footer p {
   font-weight: bold;
-  color: white;
+  color: #212121;
   padding: 15px;
+  text-align: center;
 }
 
 #menu2 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: auto;
   text-align: center;
+  grid-gap: 5px;
+}
+
+#menu2 div {
+  background-color: #212121;
+  padding: 0;
+  margin: 0;
 }
 
 #menu2 div a {
@@ -125,4 +132,32 @@ footer p {
   text-align: center;
   padding: 15px;
   height: 100%;
+}
+
+@media screen and (min-width: 760px) {
+  .wrapper {
+    grid-template-areas:
+      "header header header header"
+      "header header header header"
+      "nav nav nav nav"
+      "article article article aside"
+      "article article article aside"
+      "article article article aside"
+      "article article article aside"
+      "footer footer footer footer";
+  }
+
+  #menu1 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    padding: 5px;
+  }
+
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #menu2 {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
